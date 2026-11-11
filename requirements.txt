@@ -1,0 +1,6 @@
+
+# AWS integration for Apache Airflow
+apache-airflow-providers-amazon==9.39.0
+
+# Spotify API integration (future use)
+spotipy==2.25.1
