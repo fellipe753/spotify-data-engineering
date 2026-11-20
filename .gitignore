@@ -20,3 +20,14 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# Airflow
+airflow/logs/
+airflow/airflow.cfg
+airflow/webserver_config.py
+
+# Generated data
+data/
+
+# Python cache
+__pycache__/
