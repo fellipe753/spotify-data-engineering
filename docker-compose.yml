@@ -8,6 +8,7 @@ x-airflow-common: &airflow-common
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow-apiserver:8080/execution/
     AIRFLOW__CORE__AUTH_MANAGER: airflow.api_fastapi.auth.managers.simple.simple_auth_manager.SimpleAuthManager
     AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: "admin:admin"
+    AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET}
     AWS_PROFILE: fellipe-oliveira
     AWS_DEFAULT_REGION: us-east-2
   volumes:
@@ -15,7 +16,7 @@ x-airflow-common: &airflow-common
     - ./airflow/logs:/opt/airflow/logs
     - ./airflow/plugins:/opt/airflow/plugins
     - ./airflow/config:/opt/airflow/config
-    - ${USERPROFILE}/.aws:/home/airflow/.aws:ro
+    - ${USERPROFILE}/.aws:/home/airflow/.aws
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     postgres:

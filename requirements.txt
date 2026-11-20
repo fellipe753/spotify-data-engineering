@@ -1,6 +1,10 @@
 
 # AWS integration for Apache Airflow
 apache-airflow-providers-amazon==9.39.0
+botocore[crt]==1.43.117
 
 # Spotify API integration (future use)
 spotipy==2.25.1
+
+requests
+python-dotenv
