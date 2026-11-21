@@ -31,3 +31,14 @@ data/
 
 # Python cache
 __pycache__/
+
+# dbt
+**/target/
+**/dbt_packages/
+
+# Logs
+**/logs/
+
+# DuckDB
+*.duckdb
+*.duckdb.wal

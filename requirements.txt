@@ -8,3 +8,5 @@ spotipy==2.25.1
 
 requests
 python-dotenv
+
+boto3

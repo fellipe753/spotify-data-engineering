@@ -11,12 +11,17 @@ x-airflow-common: &airflow-common
     AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET}
     AWS_PROFILE: fellipe-oliveira
     AWS_DEFAULT_REGION: us-east-2
+    
+    SPOTIFY_CLIENT_ID: ${SPOTIFY_CLIENT_ID}
+    SPOTIFY_CLIENT_SECRET: ${SPOTIFY_CLIENT_SECRET}
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - ./airflow/logs:/opt/airflow/logs
     - ./airflow/plugins:/opt/airflow/plugins
     - ./airflow/config:/opt/airflow/config
     - ${USERPROFILE}/.aws:/home/airflow/.aws
+    - ./src:/opt/airflow/src
+    - ./data:/opt/airflow/data
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     postgres:
